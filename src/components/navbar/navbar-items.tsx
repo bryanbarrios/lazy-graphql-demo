@@ -1,17 +1,27 @@
+import { HomeIcon } from '@components/icons';
+import { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
+import IconButton from '../icon-button';
+
+interface ILink {
+  title: string;
+  to: string;
+  icon: ReactElement;
+}
 
 const NavbarItems = () => {
-  const internalLinks = [{ title: 'Home', to: '/' }];
+  const internalLinks: ILink[] = [{ title: 'Home', to: '/', icon: <HomeIcon /> }];
 
   return (
-    <ul className="space-x-6 list-none inline-flex">
-      {internalLinks.map(({ title, to }, index) => (
+    <ul className="space-x-4 list-none inline-flex">
+      {internalLinks.map(({ title, to, icon }, index) => (
         <li key={index}>
-          <Link
-            className="text-gray-600 font-medium hover:text-gray-500 transition-colors ease-in duration-150"
-            to={to}
-          >
-            {title}
+          <Link to={to}>
+            <IconButton
+              ariaLabel={title}
+              icon={icon}
+              className=" border border-gray-200 text-gray-400 hover:text-gray-500 hover:border-gray-400 transition duration-200"
+            />
           </Link>
         </li>
       ))}
