@@ -34,6 +34,7 @@ module.exports = {
     'import/no-unresolved': 'error',
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+    'react/prop-types': 'off',
   },
   settings: {
     react: {

@@ -1,11 +1,11 @@
 import { FC } from 'react';
+import { useRoutes } from 'react-router-dom';
+import { routes } from './routes/';
 
 const App: FC = () => {
-  return (
-    <div>
-      <p>Hello World</p>
-    </div>
-  );
+  const router = useRoutes(routes);
+
+  return <>{router}</>;
 };
 
 export default App;
