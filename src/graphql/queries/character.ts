@@ -10,7 +10,9 @@ export const GET_CHARACTERS = gql`
     }
 	${CharacterInformationFragment}
   }
+`;
 
+export const GET_CHARACTER = gql`
   query getCharacter($id: ID!) {
     character(id: $id) {
       ...CharacterInformation
