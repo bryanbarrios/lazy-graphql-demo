@@ -7,7 +7,7 @@ interface IContainerProps {
 }
 
 const Container: FC<IContainerProps> = ({ className, children }) => {
-  return <div className={cn('w-full max-w-6xl px-4 mx-auto', className)}>{children}</div>;
+  return <div className={cn('w-full max-w-7xl px-4 mx-auto', className)}>{children}</div>;
 };
 
 export default Container;

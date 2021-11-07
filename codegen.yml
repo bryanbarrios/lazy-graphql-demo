@@ -1,0 +1,16 @@
+overwrite: true
+schema: src/graphql/schema/index.ts
+documents: './src/**/*.{tsx,ts}'
+generates:
+  src/graphql/types.generated.ts:
+    hooks:
+      afterOneFileWrite:
+        - eslint --fix
+        - prettier --write
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-react-apollo'
+  ./graphql.schema.json:
+    plugins:
+      - 'introspection'
