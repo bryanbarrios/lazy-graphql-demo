@@ -3,6 +3,7 @@ import { Outlet } from 'react-router';
 import Navbar from '../navbar';
 import Footer from '../footer';
 import Container from '../container';
+import PageLoader from '@components/page-loader';
 
 const BaseLayout: FC = () => {
   return (
@@ -10,7 +11,7 @@ const BaseLayout: FC = () => {
       <Navbar />
       <main className="flex-1">
         <Container className="my-6">
-          <Suspense fallback={<p>Loading...</p>}>
+          <Suspense fallback={<PageLoader />}>
             <Outlet />
           </Suspense>
         </Container>
