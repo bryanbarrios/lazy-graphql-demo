@@ -1,6 +1,9 @@
+import { lazy } from 'react';
 import { RouteObject } from 'react-router';
 import { BaseLayout } from '@components/index';
-import { HomePage, NotFoundPage } from '@pages/index';
+import { NotFoundPage } from '@pages/index';
+
+const HomePage = lazy(() => import('@pages/home'));
 
 export const routes: RouteObject[] = [
   {

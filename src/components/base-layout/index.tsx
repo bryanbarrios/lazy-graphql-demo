@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, Suspense } from 'react';
 import { Outlet } from 'react-router';
 import Navbar from '../navbar';
 import Footer from '../footer';
@@ -10,7 +10,9 @@ const BaseLayout: FC = () => {
       <Navbar />
       <main className="flex-1">
         <Container className="my-6">
-          <Outlet />
+          <Suspense fallback={<p>Loading...</p>}>
+            <Outlet />
+          </Suspense>
         </Container>
       </main>
       <Footer />
